@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Yogyata ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#fff5f7,#ffe4ec,#f8e8ff);
+overflow:hidden;
+}
+
+.page{
+width:100vw;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:30px;
+text-align:center;
+}
+
+.active{
+display:flex;
+}
+
+h1{
+color:#ff4d88;
+margin-bottom:20px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:25px;
+max-width:700px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+p{
+line-height:1.8;
+font-size:18px;
+}
+
+button{
+margin-top:25px;
+padding:14px 30px;
+border:none;
+border-radius:40px;
+background:#ff4d88;
+color:white;
+cursor:pointer;
+font-size:16px;
+}
+
+.loading-bar{
+width:300px;
+height:14px;
+background:#ffd6e3;
+border-radius:50px;
+overflow:hidden;
+margin-top:20px;
+}
+
+.loading-fill{
+height:100%;
+background:#ff4d88;
+width:0%;
+animation:load 4s linear forwards;
+}
+
+@keyframes load{
+100%{width:100%;}
+}
+
+.memory-photo{
+width:300px;
+max-width:90%;
+border-radius:20px;
+margin:20px 0;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+#meter{
+font-size:70px;
+font-weight:bold;
+color:#ff4d88;
+}
+
+#noBtn{
+background:white;
+color:#ff4d88;
+border:2px solid #ff4d88;
+position:absolute;
+transition:0.15s;
+}
+
+/* hearts */
+.heart{
+position:fixed;
+bottom:-10px;
+color:red;
+font-size:18px;
+opacity:0.8;
+animation:floatUp linear forwards;
+pointer-events:none;
+z-index:9999;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0) scale(0.5);opacity:1;}
+100%{transform:translateY(-110vh) scale(1.5);opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page active" id="page1">
+<h1>Something Special Is Loading... ❤️</h1>
+<div class="loading-bar"><div class="loading-fill"></div></div>
+</div>
+
+<div class="page" id="page2">
+<h1>Yogyata ❤️</h1>
+<p>A message from someone who loves you more than words can explain.</p>
+<p id="counter">Seconds since I started missing you ❤️ 0</p>
+<button onclick="nextPage(3)">Read My Heart 🌹</button>
+</div>
+
+<div class="page" id="page3">
+<div class="card">
+<p>
+I know I hurt you.
+
+And I hate myself for it more than you know.
+
+You never deserved that.
+</p>
+<button onclick="nextPage(4)">Next ❤️</button>
+</div>
+</div>
+
+<div class="page" id="page4">
+<div class="card">
+<p>
+You deserved better from me.
+
+Better patience. Better honesty.
+
+Better love. I wasn't always who you needed, and I'm sorry.
+</p>
+<button onclick="nextPage(5)">Next ❤️</button>
+</div>
+</div>
+
+<div class="page" id="page5">
+<div class="card">
+<p>
+Even after every fight, my heart still chooses you.
+</p>
+<button onclick="nextPage(6)">Next ❤️</button>
+</div>
+</div>
+
+<div class="page" id="page6">
+<div class="card">
+<p>
+I miss us.
+
+Those late night talks, your bak bak and non stop sending reels.
+</p>
+<button onclick="nextPage(7)">Next ❤️</button>
+</div>
+</div>
+
+<div class="page" id="page7">
+<div class="card">
+<p>
+You are still my favourite person.
+
+That hasn't changed.
+</p>
+<button onclick="nextPage(8)">Next ❤️</button>
+</div>
+</div>
+
+<div class="page" id="page8">
+<div class="card">
+<p>
+I'm sorry for the pain I caused.
+
+You deserved softness, always.
+</p>
+<button onclick="nextPage(9)">Next ❤️</button>
+</div>
+</div>
+
+<div class="page" id="page9">
+<div class="card">
+<p>
+I would still choose you in every universe.
+</p>
+<button onclick="nextPage(10)">Next ❤️</button>
+</div>
+</div>
+
+<div class="page" id="page10">
+<div class="card">
+<p>
+Please don't let this be our ending.
+</p>
+<button onclick="nextPage(11)">Next ❤️</button>
+</div>
+</div>
+
+<div class="page" id="page11">
+<div class="card">
+<h1>One Last Thing From Me ❤️</h1>
+
+<p>
+Yarr,
+
+I am really in so much love with you.
+
+I am really sorry for hurting you and making you upset.
+
+I will change it for sure.
+
+We are going to be a lot good together.
+
+Love youu ❤️
+
+— Visesh
+</p>
+
+<button onclick="nextPage(12)">Continue ❤️</button>
+</div>
+</div>
+
+<div class="page" id="page12">
+<h1>Forgiveness Meter ❤️</h1>
+<div id="meter">0%</div>
+<button onclick="startMeter()">Calculate Forgiveness %</button>
+</div>
+
+<div class="page" id="page13">
+<h1>⚠️ ERROR ⚠️</h1>
+<p>
+Too Much Love Detected ❤️
+<br><br>
+Calculation Failed Successfully.
+</p>
+<button onclick="nextPage(14)">Continue ❤️</button>
+</div>
+
+<div class="page" id="page14">
+<h1>One Of My Favourite Memories ❤️</h1>
+<img src="photo.jpeg" class="memory-photo">
+<p>No matter what happens, this memory will always make me smile.</p>
+<button onclick="nextPage(15)">Continue ❤️</button>
+</div>
+
+<div class="page" id="page15">
+<h1>Will you forgive me baccha? 🥺❤️</h1>
+
+<button onclick="nextPage(16)">Yes</button>
+<button id="noBtn">No</button>
+</div>
+
+<div class="page" id="page16">
+<h1>I LOVE YOU BACCHA ❤️</h1>
+<p>
+Thank you for reading till the end.
+<br><br>
+I know sorry doesn't fix everything.
+<br><br>
+But I hope we can create more beautiful memories together.
+<br><br>
+Forever and Always ❤️
+<br><br>
+— Visesh
+</p>
+</div>
+
+<script>
+
+window.onload = function(){
+setTimeout(()=>nextPage(2),3000);
+};
+
+function nextPage(page){
+document.querySelector(".page.active").classList.remove("active");
+document.getElementById("page"+page).classList.add("active");
+}
+
+/* counter */
+let sec = 0;
+setInterval(()=>{
+const c = document.getElementById("counter");
+if(c){
+sec++;
+c.innerText = "Missing you for: " + sec + " seconds ❤️";
+}
+},1000);
+
+/* meter */
+function startMeter(){
+let meter = document.getElementById("meter");
+let values = [12,37,68,89,99];
+let i = 0;
+
+let interval = setInterval(()=>{
+meter.innerText = values[i] + "%";
+i++;
+
+if(i >= values.length){
+clearInterval(interval);
+setTimeout(()=>nextPage(13),1000);
+}
+},700);
+}
+
+/* NO button EXACT ORIGINAL messages (UNCHANGED) */
+const messages = [
+"Aise nahi baccha 😭",
+"Wrong answer detected ⚠️",
+"Mujhe ek aur chance do 🥺",
+"Try again 🤭",
+"No option currently unavailable ❤️",
+"Yeh button kaam nahi karta 😂",
+"Ek baar aur soch lo 😭"
+];
+
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("click", moveButton);
+noBtn.addEventListener("touchstart", moveButton);
+
+function moveButton(){
+
+let maxX = window.innerWidth - noBtn.offsetWidth;
+let maxY = window.innerHeight - noBtn.offsetHeight;
+
+let x = Math.random() * maxX;
+let y = Math.random() * maxY;
+
+noBtn.style.left = x + "px";
+noBtn.style.top = y + "px";
+
+let randomMessage =
+messages[Math.floor(Math.random() * messages.length)];
+
+noBtn.innerText = randomMessage;
+}
+
+/* hearts */
+function createHeart(){
+const heart = document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML = "❤️";
+
+heart.style.left = Math.random() * 100 + "vw";
+heart.style.animationDuration = (Math.random()*3 + 3) + "s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
